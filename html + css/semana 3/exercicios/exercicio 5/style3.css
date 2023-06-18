@@ -85,3 +85,13 @@ p{
 #fundo{
     background-image: url(fundo.png);
     height: 550px;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    color: white;
+}
