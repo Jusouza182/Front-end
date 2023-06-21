@@ -1,0 +1,36 @@
+.formulario{
+    background-color: white;
+    margin: 0 auto;
+    width: 40%;
+    
+    border: 1px solid grey;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+}
+
+input{
+    width: 80%;
+    height: 54px;
+    border-radius: 25px;
+    border: 1px solid grey;
+    outline: none;
+}
+button{
+    width: 80%;
+    height: 40px;
+    background-color: rgb(44, 166, 226);
+    border-radius: 20px;
+    color: white;
+    border: none;
+}
+button:hover{
+    background-color: rgb(68, 177, 231);
+}
+
+.input-error{
+    border-color: red;
+}
