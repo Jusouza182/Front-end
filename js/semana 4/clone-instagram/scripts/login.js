@@ -14,9 +14,9 @@ function clicarNoBotao(){
         document.getElementById("campoSenha").classList.add("input-error")
  
     }else{
-        document.getElementById("button-loggin").disabled = true
-        document.getElementById("button-loggin").style.opacity = 0.5
-        document.getElementById("button-loggin").innerText = "Logando ..."
+        document.getElementById("button-login").disabled = true
+        document.getElementById("button-login").style.opacity = 0.5
+        document.getElementById("button-login").innerText = "Logando ..."
     }
    
     window.location.href = "./feed.html"
