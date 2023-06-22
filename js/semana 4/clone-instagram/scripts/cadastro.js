@@ -11,6 +11,10 @@ if(nome === ""){
     document.getElementById("campoSenha").classList.add("input-error")
     document.getElementById("errorSenha").hidden = false
     document.getElementById("erroSenha").innerText = "A senha tem que ter no minimo 8 caractere"
+}else if(telefone === ""){
+    document.getElementById("campo-telefone").classList.add("input-error")
+    document.getElementById("errorSenha").hidden = false
+    document.getElementById("erroSenha").innerText = "O telefone é obrigatório"
 }
 
 
