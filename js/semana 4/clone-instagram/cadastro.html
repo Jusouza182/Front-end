@@ -16,21 +16,26 @@
         <span hidden id="errorNome" class="textoErro">Nome é obrigatório</span>
     </div>
 
-        <input type="email" placeholder="E-mail" id="campo-email">
+    <div class="inputArea">
+        <input id="campo-email" type="text" placeholder="Email" />
+        <span id="error-email" class="textoErro" hidden>Digite um email válido</span>
+    </div>
 
     <div class="inputArea">
         <input type="password" placeholder="Senha" id="campoSenha">
         <span hidden id="errorSenha" class="textoErro">A senha é muito pequena</span>
     </div>
+
     <div class="inputArea">
         <input type="tel" placeholder="Telefone" id="campo-telefone">
-        <span hidden id="errorSenha" class="textoErro">O telefone é obrigatório</span>
+        <span hidden id="errorTelefone" class="textoErro">O telefone é obrigatório</span>
     </div>
+
         <input type="text" placeholder="Nome de usuário" id="campo-nick">
-        <button type="button" onclick="fazerCadastro ()" id="button-login">Entrar</button>
-       
+        
+        <button id="login-button" type="button" onclick="fazerCadastro()">Entrar</button>
     </form>
-   
-    <script src="/scripts/cadastro.js"></script> 
+
+    <script src="scripts/cadastro.js"></script>
 </body>
 </html>
