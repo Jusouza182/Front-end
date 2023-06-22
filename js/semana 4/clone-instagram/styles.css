@@ -34,3 +34,15 @@ button:hover{
 .input-error{
     border-color: red;
 }
+
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.textoErro{
+    color: red;
+    text-align: left;
+}
