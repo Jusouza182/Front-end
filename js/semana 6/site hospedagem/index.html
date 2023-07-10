@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tela login</title>
+  </head>
+  <body>
+    <form id="telaLogin">
+      <div id="conteudo">
+        <h1>Admin Login</h1>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Insira seu e-mail" />
+        <span id="spanEmail" hidden>Campo e-mail é obrigatório</span>
+<br>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Insira sua senha" />
+        <span id="spanSenha" hidden>Campo senha é obrigatório</span>
+<br>
+        <button id="botaoLogin" type="submit">Login</button>
+      </div>
+    </form>
+
+    <script src="/site hospedagem/scripts/login.js" type="module"></script>
+  </body>
+</html>
