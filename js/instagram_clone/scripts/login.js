@@ -31,8 +31,16 @@ function realizarLogin(event) {
     );
 
     if (usuarioEncontrado) {
+      localStorage.setItem("nome_usuario", "Henrique");
+
+      campoEmail.style.display = "none";
+      campoSenha.style.display = "none";
+      loginButton.style.display = "none";
+
+      setTimeout(() => {
+        window.location.href = "./home.html";
+      }, 3000);
       // redireciona para outra página
-      window.location.href = "./home.html";
     } else {
       loginButton.disabled = false;
       loginButton.style.opacity = 1;

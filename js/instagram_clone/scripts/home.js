@@ -44,8 +44,11 @@ function mostrarInformacoes() {
     document.getElementById('qtd_publicacoes').innerText = usuario.qtd_publicacoes
     exibirImage()
 }
-
-
+function gerarTextoBemVindo(){
+    const nome = localStorage.getItem("nome_usuario");
+    document.getElementById("bem_vindo").innerHTML = "Bem vindo" + nome;
+}
+gerarTextoBemVindo()
 window.onload = mostrarInformacoes
 
 
