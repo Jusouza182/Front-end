@@ -6,7 +6,13 @@ function pesquisa(event){
     const nome = document.getElementById("username").value
 
     fetch(`https://api.github.com/users/${nome}`)
-    .then((resonse) =>(resonse.json()))
+    .then((resonse) =>{
+        if(resonse.ok === false){
+            throw new Error()
+        }
+        return  (resonse.json())
+        })
+
     .then((data) => {
         const profileDiv = document.getElementById('profile')
         profileDiv.innerHTML =`
@@ -17,5 +23,7 @@ function pesquisa(event){
         <p> Repositórios: ${data.public_repos}</p>
         <p> Local: ${data.location}</p>`
     })
-
+ .catch(()=>{
+        alert('Erro ao fazer essa solicitação')
+    })
 }

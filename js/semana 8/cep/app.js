@@ -7,7 +7,13 @@ function exibirDados(event){
     
     // url viacep.com.br/ws/01001000/json/
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then((resonse) =>(resonse.json()))
+    .then((resonse) =>{
+        if(resonse.ok === false){
+            throw new Error()
+        }
+        return  (resonse.json())
+        })
+       
     .then((data) => {
 
         document.getElementById('result').innerText = data.uf;
