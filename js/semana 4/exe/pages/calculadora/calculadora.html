@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>calculadora</title>
+
+<body>
+  <form>
+    <label  for="primeiroTermo">Qual o primeiro valor?</label>
+    <input type="number" placeholder="Primeiro valor" id="primeiroTermo">
+    <label  for="segundoTermo">Qual o segundo valor?</label>
+    <input type="number" placeholder="Segundo valor" id="segundoTermo">
+    <label for="operacoesMatematicas">Qual a operação?</label>
+    <select id="operacoesMatematicas">
+      <option id="adicao">Adição</option>
+      <option id="subtracao">Subtração</option>
+      <option id="multiplicacao">Multiplicação</option>
+      <option id = "divisao">Divisão</option>
+    </select>
+    <button type="button" id="botaoEntrar" class="botao" onclick="clicarNoBotao()">Entrar</button>
+    <img src="resetBotao.png" alt="Retornar para a calculadora" id="imgBotao" hidden>
+  </form>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
