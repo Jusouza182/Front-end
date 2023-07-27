@@ -1,14 +1,11 @@
 //importar lista de arrays de usuarios//
 import { usuarios } from "../dados/usuarios.js";
 
-//fazer com que a página não recarregue ao clicar nos botões//
-document.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
 const botao = document.getElementById("botaoLogin");
-botao.addEventListener("click", () => {
+botao.addEventListener("click", (event) => {
+ event.preventDefault();
   //limpa os campos de erro ao digitar email e senha//
+  
   document.getElementById("spanSenha").hidden = true;
   document.getElementById("spanEmail").hidden = true;
 
