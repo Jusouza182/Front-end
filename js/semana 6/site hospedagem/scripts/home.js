@@ -1,82 +1,89 @@
-import { hospedagens } from "../dados/hospedagem.js";
-let dadosHospedagem = [...hospedagens]
-
+let dadosHospedagem = []
 //botao logout//
-const botao = document.getElementById("botaoLogout");
-botao.addEventListener("click", () => {
+const botaoLogout = document.getElementById("botaoLogout")
+botaoLogout.addEventListener("click", () => {
   window.location.href = "index.html";
 });
+const botaoReserva = document.getElementById("botaoReserva")
+botaoReserva.addEventListener("click", () => {
+  window.location.href = "reserva.html";
+});
+function gerarTabela(event){
+event.preventDefault();
+
+fetch("http://localhost:3000/reservas")
+  .then(response => response.json())
+  .then(save => dadosHospedagem = save)
+  .then(data => data.map((item)=> { 
+
+  const tr = document.createElement("tr");
+
+  const tdQuarto = document.createElement("td");
+  tdQuarto.innerHTML = item.quarto;
+  tr.appendChild(tdQuarto);
+
+  const tdCliente = document.createElement("td");
+  tdCliente.innerHTML = item.nome;
+  tr.appendChild(tdCliente);
+
+  const tdCPF = document.createElement("td");
+  tdCPF.innerHTML = item.cpf;
+  tr.appendChild(tdCPF);
+
+  const tdPeriodo = document.createElement("td");
+  tdPeriodo.innerHTML = `${item.dataInicio} - ${item.dataFinal}`;
+  tr.appendChild(tdPeriodo);
+
+  const tdAcao = document.createElement("td")
+  const botaoDeletar = document.createElement("button")
+  botaoDeletar.id = "botaoDeletar"
+  botaoDeletar.innerHTML = "Deletar reserva"
+  botaoDeletar.addEventListener("click", () => deletarItem(item.id))
+  tdAcao.appendChild(botaoDeletar)
+  tr.appendChild(tdAcao)
+
+  document.getElementById('corpoTabela').appendChild(tr);})
+    
+);
 
 
-//inserir os dados na tabela//
-function gerarTabela() {
-
-  hospedagens.map((hospedagem) => {
-    const tr = document.createElement("tr");
-
-    const tdQuarto = document.createElement("td");
-    tdQuarto.innerHTML = hospedagem.quarto;
-    tr.appendChild(tdQuarto);
-
-    const tdCliente = document.createElement("td");
-    tdCliente.innerHTML = hospedagem.cliente;
-    tr.appendChild(tdCliente);
-
-    const tdCPF = document.createElement("td");
-    tdCPF.innerHTML = hospedagem.cpf;
-    tr.appendChild(tdCPF);
-
-    const tdPeriodo = document.createElement("td");
-    tdPeriodo.innerHTML = hospedagem.periodo;
-    tr.appendChild(tdPeriodo);
-
-    const tdAcao = document.createElement("td")
-    const botaoDeletar = document.createElement("button")
-    botaoDeletar.id = "botaoDeletar"
-    botaoDeletar.innerHTML = "Deletar reserva"
-    botaoDeletar.addEventListener("click", () => deletarItem(hospedagem.id))
-    tdAcao.appendChild(botaoDeletar)
-    tr.appendChild(tdAcao)
-
-    document.getElementById('corpoTabela').appendChild(tr);
-  });
-}
 
 function deletarItem(id){
     const filtrados = dadosHospedagem.filter(item => item.id !== id)
     document.getElementById('corpoTabela').innerHTML="";
     dadosHospedagem = filtrados
 
-    filtrados.map((hospedagem) => {
+    filtrados.map((dados) => {
         const tr = document.createElement("tr");
     
         const tdQuarto = document.createElement("td");
-        tdQuarto.innerHTML = hospedagem.quarto;
+        tdQuarto.innerHTML = dados.quarto;
         tr.appendChild(tdQuarto);
     
         const tdCliente = document.createElement("td");
-        tdCliente.innerHTML = hospedagem.cliente;
+        tdCliente.innerHTML = dados.nome;
         tr.appendChild(tdCliente);
     
         const tdCPF = document.createElement("td");
-        tdCPF.innerHTML = hospedagem.cpf;
+        tdCPF.innerHTML = dados.cpf;
         tr.appendChild(tdCPF);
     
         const tdPeriodo = document.createElement("td");
-        tdPeriodo.innerHTML = hospedagem.periodo;
+        tdPeriodo.innerHTML =`${dados.dataInicio} - ${dados.dataFinal}`;
         tr.appendChild(tdPeriodo);
     
         const tdAcao = document.createElement("td")
         const botaoDeletar = document.createElement("button")
         botaoDeletar.id = "botaoDeletar"
         botaoDeletar.innerHTML = "Deletar reserva"
-        botaoDeletar.addEventListener('click', () => deletarItem(hospedagem.id))
+        botaoDeletar.addEventListener('click', () => deletarItem(dados.id))
         tdAcao.appendChild(botaoDeletar)
         tr.appendChild(tdAcao)
     
         document.getElementById('corpoTabela').appendChild(tr);
 
 })
+}
 }
 
 window.onload = gerarTabela

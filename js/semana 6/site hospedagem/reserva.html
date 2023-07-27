@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Reserva</title>
+  </head>
+  <body>
+    <h1 class="tituloReserva">Faça aqui sua reserva</h1>
+    <form type="submit" id="formReserva" class="formReserva">
+      <select id="quartos">
+        <option value="111">Quarto 111</option>
+        <option value="222">Quarto 222</option>
+        <option value="333">Quarto 333</option>
+      </select>
+      <span id="erroSelect"></span>
+      <div id="inputs">
+        <label for="nomeCompleto">Nome completo</label>
+        <input type="text"id="nomeCompleto"placeholder="Digite seu nome completo"/>
+        <span id="nomeErro"></span>
+        <br>
+        <label for="cpf">CPF</label>
+        <input type="text" placeholder="Digite seu CPF" id="cpf"/>
+        <span id="cpfErro"></span>
+        <br>
+      </div>
+      <div id="datas">
+        <label for="dataInicio">Data de check-in</label>
+        <input type="date" id="dataInicio" />
+        <label for="dataFinal">Data de check-out</label>
+        <input type="date" id="dataFinal" />
+      </div>
+      <span id="dataErro"></span>
+      <button id="botaoReservar" type="submit">Reservar</button>
+    </form>
+
+    <script src="./scripts/reserva.js"></script>
+  </body>
+</html>
