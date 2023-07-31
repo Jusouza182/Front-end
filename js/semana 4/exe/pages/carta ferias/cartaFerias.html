@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Carta Férias</title>
+  </head>
+  <body>
+    <h1>CARTA FÉRIAS</h1>
+
+    <span id="resultado"></span>
+
+    <form type="submit" id="form">
+      <label for="nome">Nome funcionário</label>
+      <input type="text" id="nome" />
+
+      <label for="dataI">Data inicio</label>
+      <input type="date" id="dataI" />
+
+      <label for="dataT">Data término</label>
+      <input type="date" id="dataT" />
+
+      <button type="submit" id="botaoGerar">Gerar carta</button>
+    </form>
+    <button type="submit" id="botaoReset" hidden="true"> Gerar nova carta </button>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

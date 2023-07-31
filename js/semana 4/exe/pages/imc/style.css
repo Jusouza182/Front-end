@@ -1,0 +1,51 @@
+img{
+    width: 150px;
+}
+
+body{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+}
+
+#botaoCalcular{
+    width: 150px;
+    height: 30px;
+}
+
+#botaoReset{
+    width: 200px;
+    height: 30px;
+}
+
+input{
+    height: 24px;
+}
+
+.abaixo{
+    background-color: rgb(49, 49, 239);
+    color: white;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.ideal{
+        background-color: rgb(32, 182, 75);
+        color: white;
+        width: 200px;
+        height: 20px;
+        text-align: center;
+        border-radius: 20px;
+}
+
+.excesso{
+    background-color: rgb(234, 45, 25);
+    color: white;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
