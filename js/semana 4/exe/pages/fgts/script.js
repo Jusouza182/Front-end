@@ -11,7 +11,6 @@ function calcularFgts(event){
 
     document.getElementById("form").hidden = true;
     resultado.hidden = false;
-    resultado2.hidden = false;
 
 
     const fgts = Number(salario.value) * 0.08;

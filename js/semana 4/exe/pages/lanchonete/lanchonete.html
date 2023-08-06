@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lanchonete</title>
+</head>
+<body>
+    <h1>Lanchonete Online</h1>
+
+    <span id="resultado"></span>
+
+    <table border="1" id="tabela">
+        <tr>
+            <th>Código</th>
+            <th>Produto</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>1123</td>
+            <td>Hamburguer</td>
+            <td>R$12,00</td>
+        </tr>
+        <tr>
+            <td>3423</td>
+            <td>Sanduiche de pernil</td>
+            <td>R$9,00</td>
+        </tr>
+        <tr>
+            <td>4521</td>
+            <td>Bauru</td>
+            <td>R$15,00</td>
+        </tr>
+        <tr>
+            <td>5322</td>
+            <td>Sanduiche de mortadela</td>
+            <td>R$16,00</td>
+        </tr>
+    </table>
+
+    <form id="form">
+        <input type="text" placeholder="Qual o código do produto?" id="codigo">
+        <input type="text" placeholder="Qual a quantidade" id="quantidade">
+        <button type="submit" id="botaoFazerPedido">Fazer pedido</button>
+    </form>
+    <button type="submit" id="botaoReset" hidden = true>Calcular novamente</button>
+    <script src="script.js"></script>
+</body>
+</html>

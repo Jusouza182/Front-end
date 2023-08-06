@@ -50,8 +50,7 @@ else if(nomeCompleto.value === ""){
       },
     })
     .then(() => {
-        alert("Reserva realizada com sucesso")
-        window.location.href = "./home.html"
+        window.location.href = "home.html"
       })
       .catch(() => {
         alert('Desculpe. Houve um erro ao fazer sua reserva')
