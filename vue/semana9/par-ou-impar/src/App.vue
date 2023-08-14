@@ -2,7 +2,7 @@
 <div>
     <h1>Calculadora impar ou par</h1>
     <input type="number" placeholder="Numero" v-model="numero" />
-    <button @click="calcular()">Resultado</button>  
+    <button @click="calcular()">Resultado</button>  <br/> <br/>
     <span>{{ resultado }}</span>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     calcular(){
-      this.resultado = this.numero % 2 === 0 ? "par" : "impar"
+      this.resultado = this.numero % 2 === 0 ? "Esse número é par" : "Esse número é impar"
     },
   }
   }
