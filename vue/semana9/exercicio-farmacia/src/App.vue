@@ -38,14 +38,16 @@ export default {
         favorito: false
       }
       this.listaMedicamentos.push(novoMedicamento)
+      
     },
     FavoritarMedicamento(id) {
       this.listaMedicamentos = this.listaMedicamentos.map(item => {
         if (item.id == id) {
           item.favorito = !item.favorito
-
-          return item
         }
+        console.log(this.listaMedicamentos)
+         return item
+
       })
     }
   },

@@ -101,13 +101,42 @@ export default {
                         email: this.email,
                         phone: this.phone,
                         password: this.password,
-                        verifyPassword: this.confirmPassword,
+                        confirmPassword: this.confirmPassword,
                         confirmTerm: this.confirmTerm
                     },
                     // Faz com que seja processado todos os campos de uma vez
                     { abortEarly: false }
                 )
 
+                //armazenar cadastros
+                fetch('http://localhost:3000/api/register', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: this.name,
+                        email: this.email,
+                        phone: this.phone,
+                        password: this.password,
+                        verifyPassword: this.confirmPassword,
+                        sponsor: this.sponsor,
+                        bio: this.bio,
+                        confirmTerm: this.confirmTerm,
+                        planType: this.planType
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then((response) => {
+                    if (response.ok === false) {
+                        throw new Error()
+                    }
+                    return response.json()
+                })
+                    .then((response) => {
+                        this.$router.push('/')
+                    })
+                    .catch(() => {
+                        alert("Houve uma falha no cadastro")
+                    })
 
 
             } catch (error) {

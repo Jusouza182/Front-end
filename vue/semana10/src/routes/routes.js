@@ -3,6 +3,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import LoginInstagran from "../views/Login/LoginInstagran.vue";
 import HomeInstagran from "../views/Home/HomeInstagran.vue";
 import SignUp from "../views/SignUp/SingUp.vue";
+import AboutInstagran from "../views/about/AboutInstagran.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
             path: '/home',
             name: 'Home',
             component: HomeInstagran
+        },
+        {
+            path: '/about',
+            name: 'Sobre',
+            component: AboutInstagran
         }
     ]
 })
