@@ -65,6 +65,7 @@
 
 import * as yup from 'yup'
 import { captureErrorYup } from '../../utils/captureErrorYup'
+import axios from 'axios'
 
 export default {
     data() {
@@ -108,37 +109,31 @@ export default {
                     { abortEarly: false }
                 )
 
-                //armazenar cadastros
-                fetch('http://localhost:3000/api/register', {
-                    method: 'POST',
-                    body: JSON.stringify({
+                axios({
+                    url: 'http://localhost:3000/api/register',
+                    method: "POST",
+                    data:{
                         name: this.name,
                         email: this.email,
-                        phone: this.phone,
+                        contact: this.phone,
                         password: this.password,
-                        verifyPassword: this.confirmPassword,
                         sponsor: this.sponsor,
                         bio: this.bio,
                         confirmTerm: this.confirmTerm,
                         planType: this.planType
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
                     }
-                }).then((response) => {
-                    if (response.ok === false) {
-                        throw new Error()
-                    }
-                    return response.json()
                 })
-                    .then((response) => {
-                        this.$router.push('/')
-                    })
-                    .catch(() => {
-                        alert("Houve uma falha no cadastro")
-                    })
-
-
+                .then(()=> {
+                    alert("Cadastrado com sucesso")
+                    this.$router.push("/")
+                })
+                .catch((error) => {
+                        if(error.reponse?.data?.menssage){
+                            alert(error.response.data.menssage)
+                        }else{
+                            alert("Houve um erro ao cadastrar")
+                        }})
+                //armazenar cadastros
             } catch (error) {
                 console.log(error)
                 if (error instanceof yup.ValidationError) {

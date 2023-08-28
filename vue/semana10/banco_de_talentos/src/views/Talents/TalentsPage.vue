@@ -95,7 +95,7 @@ export default {
                 data: null,
                 interest: '',
                 level: '',
-                ability: '',
+                ability: [],
                 apresentation: ''
             },
             errors: {}

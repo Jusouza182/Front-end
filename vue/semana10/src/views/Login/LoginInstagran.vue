@@ -16,6 +16,7 @@
     </form>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
@@ -35,8 +36,25 @@ export default {
 
             if (this.password === "") this.errorInputPassword = "Senha é obrigatório";
 
-            if (this.errorInputEmail === "" && this.errorInputPassword === "") this.$router.push('/home');
-
+            if (this.errorInputEmail === "" && this.errorInputPassword === "");
+            
+            axios({
+                url: 'http://localhost:3000/api/login',
+                method: "POST",
+                data: {
+                    email: this.email,
+                    password: this.password,
+                }
+            })
+            .then((response)=> {
+                localStorage.setItem("instagran_token", response.data.tolken )
+                localStorage.setItem("instagran_name", response.data.name )
+                
+                    alert("Login realizado com sucesso")
+                    this.$router.push("/home")
+                })
+                .catch(() => {
+                       alert("Falha ao realizar login")})
         }
     }
 }
