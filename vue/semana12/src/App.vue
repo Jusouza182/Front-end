@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-app-bar color="grey">
-      <v-app-bar-title>Funko Lab</v-app-bar-title>
+      <router-link to="/"><v-app-bar-title>Funko Lab</v-app-bar-title></router-link><v-app-bar-title>Funko Lab</v-app-bar-title>
 
       <v-btn icon>
         <router-link to="/carrinho" class="router">
