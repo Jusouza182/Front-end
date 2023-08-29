@@ -1,25 +1,20 @@
 <template>
   <v-layout>
-    <v-app-bar color="grey">
-      <router-link to="/"><v-app-bar-title>Funko Lab</v-app-bar-title></router-link><v-app-bar-title>Funko Lab</v-app-bar-title>
-
-      <v-btn icon>
-        <router-link to="/carrinho" class="router">
-        {{ this.$store.state.produtosCarrinho.length}}
-          <v-icon color="#FFF">mdi-cart</v-icon>
-        </router-link>
-      </v-btn>
-    </v-app-bar>
-
     <v-main>
+      <Menus></Menus>
       <router-view></router-view>
+      <Rodape></Rodape>
     </v-main>
   </v-layout>
 </template>
-<style scoped>
-.router{
-  text-decoration: none;
-  color: #FFF;
+<script>
+import Rodape from "./components/Rodape/RodapeView.vue"
+import Menus from "./components/Menu/MenuView.vue"
+export default {
+  components: {
+    Rodape,
+    Menus
+  }
 }
+</script>
 
-</style>

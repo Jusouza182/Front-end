@@ -3,14 +3,10 @@ import { createStore } from 'vuex'
 const store = createStore({
     state() {
         return {
-            teste: 'Ola mundo',
-            produtosCarrinho: []
+            produtosCarrinho: [],
         }
     },
     mutations: {
-        alterarTeste(state, value) {
-            state.teste = value
-        },
         adicionarProdutoAoCarrinho(state, produtoRecebido) {
 
             const produtoNoCarrinho = state.produtosCarrinho.find(item => item.id === produtoRecebido.id)

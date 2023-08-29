@@ -1,5 +1,5 @@
 <template>
-  <h1>Carrinho</h1>
+    <h1>Carrinho</h1>
 
     <v-table>
         <thead>
@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <tr v-for="item in this.$store.state.produtosCarrinho" :key="item.id">
-                <td><img :src="item.imagem" width="30" alt="foto funko"></td>
+                <td><img :src="item.imagem" width="70" alt="foto funko"></td>
                 <td>{{ item.nome }}</td>
                 <td>{{ item.quantidade }}</td>
                 <td>{{ item.preco }}</td>
@@ -27,4 +27,16 @@
             </tr>
         </tbody>
     </v-table>
+    <div class="button">
+        <v-btn color="blue" class="d-flex justify-end"> Finalizar compra</v-btn>
+    </div>
 </template>
+
+
+<style scoped>
+.button{
+    display: flex;
+    justify-content: end;
+    margin:30px;
+}
+</style>
